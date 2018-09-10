@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>React App</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="./dependencies-library.js"></script>
+    <script>
+        var exports = window;
+        exports.require = window["appLibrary"].require;
+        var global = window;
+    </script>
+    <script src="./slinky-exercise-fastopt-library.js"></script>
+</body>
+
+</html>
