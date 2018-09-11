@@ -2,6 +2,7 @@ package scalajsreact
 
 import slinky.core._
 import slinky.core.annotations.react
+import slinky.core.facade.React
 import slinky.web.html._
 
 import scalajsreact.components._
@@ -10,8 +11,11 @@ import scalajsreact.components._
   type Props = Unit
 
   def render() = {
+    val myRef = React.createRef[ScrollBox.Def]
     div(
-      ValidationSample()
+      ScrollBox().withRef(myRef),
+      button(onClick := {_ => myRef.current.scrollToBottom()})("맨 밑으로")
+
     )
   }
 }
