@@ -11,11 +11,8 @@ import scalajsreact.components._
   type Props = Unit
 
   def render() = {
-    val myRef = React.createRef[ScrollBox.Def]
     div(
-      ScrollBox().withRef(myRef),
-      button(onClick := {_ => myRef.current.scrollToBottom()})("맨 밑으로")
-
+      IterationSample()
     )
   }
 }
