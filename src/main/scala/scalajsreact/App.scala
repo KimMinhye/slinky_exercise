@@ -7,12 +7,24 @@ import slinky.web.html._
 
 import scalajsreact.components._
 
-@react class App extends StatelessComponent {
+@react class App extends Component {
   type Props = Unit
+  case class State(color: String)
+
+  def initialState = State("#000000")
 
   def render() = {
     div(
-      IterationSample()
+      button(onClick := { _ => handleClick()})("랜덤색상"),
+      LifeCycleSample(state.color)
     )
+  }
+
+  def handleClick() = {
+    setState(State(color = getRandomColor))
+  }
+
+  def getRandomColor(): String = {
+    "#%06x".format(scala.util.Random.nextInt(1 << 24))
   }
 }
