@@ -8,12 +8,13 @@ npmDependencies in Compile ++= Seq("react" -> "16.4.2",
                                    "react-dom" -> "16.4.2", 
                                    "react-proxy" -> "1.1.8")
 
-npmDevDependencies in Compile += "file-loader" -> "1.1.11"
-npmDevDependencies in Compile += "style-loader" -> "0.20.3"
-npmDevDependencies in Compile += "css-loader" -> "0.28.11"
-npmDevDependencies in Compile += "html-webpack-plugin" -> "3.2.0"
-npmDevDependencies in Compile += "copy-webpack-plugin" -> "4.5.1"
-npmDevDependencies in Compile += "webpack-merge" -> "4.1.2"
+npmDevDependencies in Compile ++= Seq("file-loader" -> "1.1.11",
+                                      "file-loader" -> "1.1.11",
+                                      "style-loader" -> "0.20.3", 
+                                      "css-loader" -> "0.28.11", 
+                                      "html-webpack-plugin" -> "3.2.0", 
+                                      "copy-webpack-plugin" -> "4.5.1", 
+                                      "webpack-merge" -> "4.1.2")
 
 libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.4.3"
 libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.4.3"
